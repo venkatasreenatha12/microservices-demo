@@ -710,11 +710,15 @@ spec:
         - name: DISABLE_PROFILER
           value: "1"
         readinessProbe:
-          periodSeconds: 5
+          periodSeconds: 20
+          initialDelaySeconds: 60
+          timeoutSeconds: 10 
           grpc:
             port: 8080
         livenessProbe:
-          periodSeconds: 5
+          periodSeconds: 20
+          initialDelaySeconds: 60
+          timeoutSeconds: 10
           grpc:
             port: 8080
         resources:
